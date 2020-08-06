@@ -3,24 +3,40 @@ package main
 import (
 	"errors"
 	"fmt"
+	"bufio"
+	"os"
 )
 
+
+
 func main() {
-	//sumValue, err := Sum(1, 2)
+
+	
+
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Print("Enter text: ") 
+	text, _ := reader.ReadString('\n')
+
+	fmt.Println("Vc digitou:") 
+	fmt.Println(text)
+
+	sumValue, err := Sum(1, 2)
 
 	//subValue, err := Subtraction(5, 3)
 
-	multiValue, err := Multi(5, 3)
+	//multiValue, err := Multi(5, 3)
 
-	divideValue, err := Divide(2, 0)
+	//divideValue, err := Divide(2, 0)
 
+	
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
-	fmt.Println(multiValue)
-	fmt.Println(divideValue)
+	fmt.Println(sumValue)
+	//fmt.Println(divideValue)
+	
 }
 
 func Sum(num1, num2 int) (int, error) {
