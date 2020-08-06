@@ -55,7 +55,7 @@ func RetrieveNumberByIo() (float64, error) {
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Print("Enter a number: ")
 	text, _ := reader.ReadString('\n')
-	result := strings.Split(strings.TrimSpace(text), "x")
+	result := strings.TrimSpace(text)
 
-	return strconv.ParseFloat(result[0], 64)
+	return strconv.ParseFloat(result, 64)
 }
